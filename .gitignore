@@ -1,0 +1,4 @@
+*.asv
+*.m~
+.ipynb_checkpoints/
+__pycache__/
