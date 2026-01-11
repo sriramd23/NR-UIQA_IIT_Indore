@@ -57,11 +57,7 @@ Before running the notebooks, ensure you have these three specific files ready:
 2.  **Upload to Runtime:**
     * If using Google Colab, drag and drop `features.zip`, `mos_UID.xlsx`, and `SAUD_MOS.xlsx` into the file browser on the left.
 3.  **Run the Notebook:**
-    * Execute the first cell to unzip the features:
-        ```python
-        !unzip features.zip
-        ```
-    * Run the remaining cells to train the regression models.
+    * Run the cells to train the regression models.
 
 ## 🏆 Current Results
 We have achieved state-of-the-art correlation with human perception using a stacking ensemble approach.
@@ -86,8 +82,8 @@ The framework is validated on a consolidated dataset of **1,960 images**:
 
 ## 📑 Documentation
 Detailed reports on the internship tasks and theoretical background can be found in the [`reports/`](reports/) directory:
-* [Task 1: UIQA Basics](reports/Task_1_UIQA_Basics.pdf)
-* [Task 2: Feature Logic](reports/Task_2_Feature_Logic.pdf)
+* [Task 1: UIQA Basics](Reports/Task_1_UIQA_Basics.pdf)
+* [Task 2: Feature Logic](Reports/Task_2_Feature_Logic.pdf)
 
 ---
 *Maintained by Sriram Dhanasekaran | IIT Indore Internship | Dec 2025 - Present*
