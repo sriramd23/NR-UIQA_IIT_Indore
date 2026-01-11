@@ -44,7 +44,7 @@ UIQA-Feature-Extraction-IIT-Indore/
     * **Output:** This will generate individual `.mat` files for every image in the `features/` directory.
 
 ### Phase 2: Model Training (Python / Google Colab)
-*Prerequisite: The Notebooks are designed to run in a cloud environment (like Google Colab) or local Jupyter lab.*
+*Prerequisite: The Notebooks are designed to run in a cloud environment (like Google Colab) or local Jupyter Lab.*
 
 **Step 1: Prepare your Data**
 Before running the notebooks, ensure you have these three specific files ready:
@@ -68,7 +68,7 @@ We have achieved state-of-the-art correlation with human perception using a stac
 
 | Model | PLCC (Accuracy) | SROCC (Monotonicity) |
 | :--- | :---: | :---: |
-| **Baseline (SVR)** | ~0.7800 | - |
+| **Baseline (SVR)** | 0.7861 | 0.7893 |
 | **Super Stack Model** | **0.9048** | **0.9098** |
 
 > *Note: The Super Stack model achieved this with limited iterations (20) due to computational constraints. Further tuning is expected to improve results.*
@@ -76,7 +76,7 @@ We have achieved state-of-the-art correlation with human perception using a stac
 ### Performance Visuals
 | SVR Performance | Stack Model Performance |
 |:---:|:---:|
-| ![SVR Plot](results/All_Base_Models_Plot.png) | ![Stack Plot](results/Super_Stack_and_other_Models_Plot.png) |
+| ![SVR Plot](Results/All_Base_Models_Plot.png) | ![Stack Plot](Results/Super_Stack_and_other_Models_Plot.png) |
 | *Moderate correlation (PLCC ~0.78)* | *High correlation (PLCC ~0.90)* |
 
 ## 📄 Dataset Details
