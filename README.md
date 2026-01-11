@@ -32,5 +32,62 @@ UIQA-Feature-Extraction-IIT-Indore/
 ├── results/                       # Performance plots and metrics
 └── reports/                       # Task documentation and theory
 ```
-🚀 Usage & Reproduction GuidePhase 1: Feature Extraction (MATLAB)Prerequisite: MATLAB installed.Navigate to the feature_extraction/ folder.Open generate_feature_files.m.Set your dataset path (ensure datasets/SUAD and datasets/UID contain images).Run the script.Output: This will generate individual .mat files for every image in the features/ directory.Phase 2: Model Training (Python / Google Colab)Prerequisite: The Notebooks are designed to run in a cloud environment (like Google Colab) or local Jupyter lab.Step 1: Prepare your DataBefore running the notebooks, ensure you have these three specific files ready:features.zip: Compress the features/ folder (containing all .mat files) into a single zip file.mos_UID.xlsx: The ground truth Mean Opinion Scores for the UID dataset.SAUD_MOS.xlsx: The ground truth Mean Opinion Scores for the SUAD dataset.Step 2: Runtime SetupOpen model_development/02_Super_Stack_Model.ipynb.Upload to Runtime:If using Google Colab, drag and drop features.zip, mos_UID.xlsx, and SAUD_MOS.xlsx into the file browser on the left.Run the Notebook:Execute the first cell to unzip the features:Python!unzip features.zip
-Run the remaining cells to train the regression models.🏆 Current ResultsWe have achieved state-of-the-art correlation with human perception using a stacking ensemble approach.ModelPLCC (Accuracy)SROCC (Monotonicity)Baseline (SVR)~0.7800-Super Stack Model0.90480.9098Note: The Super Stack model achieved this with limited iterations (20) due to computational constraints. Further tuning is expected to improve results.Performance VisualsSVR PerformanceStack Model PerformanceModerate correlation (PLCC ~0.78)High correlation (PLCC ~0.90)📄 Dataset DetailsThe framework is validated on a consolidated dataset of 1,960 images:SUAD: 1,000 Images (Diverse underwater scenes)UID: 960 Images (Reference-graded underwater database)📑 DocumentationDetailed reports on the internship tasks and theoretical background can be found in the reports/ directory:Task 1: UIQA BasicsTask 2: Feature LogicMaintained by Sriram Dhanasekaran | IIT Indore Internship | Dec 2025 - Present
+## 🚀 Usage & Reproduction Guide
+
+### Phase 1: Feature Extraction (MATLAB)
+*Prerequisite: MATLAB installed.*
+
+1.  Navigate to the `feature_extraction/` folder.
+2.  Open `generate_feature_files.m`.
+3.  Set your dataset path (ensure `datasets/SUAD` and `datasets/UID` contain images).
+4.  Run the script.
+    * **Output:** This will generate individual `.mat` files for every image in the `features/` directory.
+
+### Phase 2: Model Training (Python / Google Colab)
+*Prerequisite: The Notebooks are designed to run in a cloud environment (like Google Colab) or local Jupyter lab.*
+
+**Step 1: Prepare your Data**
+Before running the notebooks, ensure you have these three specific files ready:
+1.  **`features.zip`**: Compress the `features/` folder (containing all `.mat` files) into a single zip file.
+2.  **`mos_UID.xlsx`**: The ground truth Mean Opinion Scores for the UID dataset.
+3.  **`SAUD_MOS.xlsx`**: The ground truth Mean Opinion Scores for the SUAD dataset.
+
+**Step 2: Runtime Setup**
+1.  Open `model_development/02_Super_Stack_Model.ipynb`.
+2.  **Upload to Runtime:**
+    * If using Google Colab, drag and drop `features.zip`, `mos_UID.xlsx`, and `SAUD_MOS.xlsx` into the file browser on the left.
+3.  **Run the Notebook:**
+    * Execute the first cell to unzip the features:
+        ```python
+        !unzip features.zip
+        ```
+    * Run the remaining cells to train the regression models.
+
+## 🏆 Current Results
+We have achieved state-of-the-art correlation with human perception using a stacking ensemble approach.
+
+| Model | PLCC (Accuracy) | SROCC (Monotonicity) |
+| :--- | :---: | :---: |
+| **Baseline (SVR)** | ~0.7800 | - |
+| **Super Stack Model** | **0.9048** | **0.9098** |
+
+> *Note: The Super Stack model achieved this with limited iterations (20) due to computational constraints. Further tuning is expected to improve results.*
+
+### Performance Visuals
+| SVR Performance | Stack Model Performance |
+|:---:|:---:|
+| ![SVR Plot](results/All_Base_Models_Plot.png) | ![Stack Plot](results/Super_Stack_and_other_Models_Plot.png) |
+| *Moderate correlation (PLCC ~0.78)* | *High correlation (PLCC ~0.90)* |
+
+## 📄 Dataset Details
+The framework is validated on a consolidated dataset of **1,960 images**:
+* **SUAD:** 1,000 Images (Diverse underwater scenes)
+* **UID:** 960 Images (Reference-graded underwater database)
+
+## 📑 Documentation
+Detailed reports on the internship tasks and theoretical background can be found in the [`reports/`](reports/) directory:
+* [Task 1: UIQA Basics](reports/Task_1_UIQA_Basics.pdf)
+* [Task 2: Feature Logic](reports/Task_2_Feature_Logic.pdf)
+
+---
+*Maintained by Sriram Dhanasekaran | IIT Indore Internship | Dec 2025 - Present*
