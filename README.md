@@ -1,34 +1,42 @@
 # No-Reference Underwater Image Quality Assessment (NR-UIQA)
 
-This repository contains the code, reports, and experimental results developed
-as part of a CEA Research Internship on **No-Reference Underwater Image Quality
-Assessment (NR-UIQA)**.
+This repository contains the complete codebase, reports, and experimental
+results developed as part of a **CEA Research Internship** on
+**No-Reference Underwater Image Quality Assessment (NR-UIQA)**.
 
-The objective of this work is to design and analyze a feature-based NR-UIQA
-framework that predicts perceptual image quality without access to a reference
-image, with a specific focus on underwater imaging scenarios.
+The work focuses on a feature-based NR-UIQA framework designed to predict
+perceptual image quality in underwater environments without access to a
+reference image.
 
 ---
 
 ## Repository Structure
 
-The repository is organized to reflect the methodology adopted in the study:
+The repository is organized to reflect the stages of the proposed framework:
 
-- **feature_extraction/**  
+- **Feature_Extraction/**  
   MATLAB implementations for handcrafted feature extraction, including:
-  - Structural features in the gradient domain  
-  - Color features in the HSV color space  
-  - Luminance-based Gabor (frequency-domain) features  
+  - Gradient-domain structural features
+  - HSV-based color moments and entropy features
+  - Luminance-based Gabor (frequency-domain) features
 
-- **model_development/**  
-  Python scripts and notebooks for training regression models and a Super Stack
-  (stacked generalization) ensemble.
+- **Model_Development/**  
+  Python notebooks and scripts for:
+  - Training base regression models
+  - Building a Super Stack (stacked generalization) ensemble
+  - Model evaluation using correlation-based metrics
 
-- **results/**  
-  Plots, tables, and experiment logs corresponding to the reported evaluations.
+- **Results/**  
+  Plots, tables, and spreadsheets corresponding to the experimental results
+  reported in the internship report.
 
-- **docs/**  
-  Internship reports and supporting documents submitted under the CEA framework.
+- **Docs/**  
+  Internship-related documents, including task reports and the CEA midterm
+  report.
+
+- **Sample_Dataset/**  
+  A small subset of images is provided only for testing and demonstration.
+  Full datasets are not included.
 
 ---
 
@@ -37,83 +45,36 @@ The repository is organized to reflect the methodology adopted in the study:
 The NR-UIQA framework follows a feature-based pipeline:
 
 1. Handcrafted features are extracted to capture perceptually relevant
-   degradations related to color distortion, structural degradation, and
-   mid-frequency texture loss.
-2. Multiple regression models are trained independently to learn the mapping
-   between extracted features and subjective quality scores.
-3. A Super Stack Ensemble is employed to combine complementary predictors and
-   improve robustness and consistency.
+   distortions related to color degradation, structural loss, and
+   mid-frequency texture attenuation.
+2. Multiple regression models are trained independently on the extracted
+   features and corresponding subjective quality scores.
+3. A Super Stack Ensemble is employed to combine complementary predictors
+   and improve robustness and consistency.
 
 Model performance is evaluated using PLCC, SRCC, and RMSE.
 
 ---
 
-## How to Reproduce Results
+## Datasets
 
-The experimental pipeline is modular and can be reproduced in the following
-stages.
-
-### 1. Dataset Preparation
-- Download the required underwater image quality datasets (e.g., UID2021,
-  SAUD) from their official sources.
-- Organize images and corresponding MOS files according to the dataset-specific
-  structure expected by the feature extraction scripts.
-
-Dataset files are not included in this repository.
-
----
-
-### 2. Feature Extraction (MATLAB)
-- Navigate to the `feature_extraction/` directory.
-- Run the main feature extraction script to compute handcrafted features for
-  each image:
-  - Structural features (gradient-domain statistics)
-  - HSV-based color features
-  - Luminance-based Gabor features (optional, for auxiliary analysis)
-
-The output of this stage is a set of feature matrices stored in `.mat` files.
-
----
-
-### 3. Model Training and Evaluation (Python)
-- Navigate to the `model_development/` directory.
-- Load the extracted feature files and corresponding MOS values.
-- Train individual regression models (e.g., SVR, tree-based models).
-- Train the Super Stack Ensemble using predictions from selected base models.
-
-Performance metrics (PLCC, SRCC, RMSE) are computed over multiple random splits
-to ensure statistical stability.
-
----
-
-### 4. Result Analysis
-- Generated plots and tables are saved in the `results/` directory.
-- These outputs correspond directly to figures and numerical results reported
-  in the internship report.
-
----
-
-## Notes on Reproducibility
-
-- Due to random train–test splits, numerical values may vary slightly across
-  runs.
-- Reported results are obtained by averaging performance over multiple
-  independent trials.
-- Computational cost varies depending on the number of repetitions and feature
-  configurations used.
+Experiments are conducted on publicly available underwater image quality
+datasets such as **UID2021** and **SAUD**.  
+Due to size and licensing constraints, full datasets are not included in
+this repository.
 
 ---
 
 ## Internship Context
 
-This repository serves as the consolidated code and results archive for the CEA
-Research Internship supports the analysis presented in the midterm report.
-All contents are intended strictly for academic and research purposes.
+This repository serves as the consolidated code and results archive for the
+CEA Research Internship supports the analysis presented in the midterm
+report. All contents are intended strictly for academic and research use.
 
 ---
 
-## License and Disclaimer
+## License
 
-This repository is provided for academic use only.  
-Copyright of datasets, referenced papers, and external resources remains with
+This repository is intended for academic use only.  
+Copyright of datasets, reference papers, and external resources remains with
 their respective authors.
